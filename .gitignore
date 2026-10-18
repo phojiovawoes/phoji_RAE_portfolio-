@@ -1,0 +1,13 @@
+/.chrome-profile-*/
+/.npm-cache/
+/.npm-logs/
+/node_modules/
+/dist/
+/vite.stdout.log
+/vite.stderr.log
+/*.png
+/*.jpg
+/*.jpeg
+/*.PNG
+/*.JPG
+/*.JPEG
