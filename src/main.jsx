@@ -5,6 +5,8 @@ import go2StairsUpVideo from './a1fdf127d9e482cee07788db485aabe3.mp4';
 import go2StairsDownVideo from './bd69e6693086cb8d2b516649c306e0f4.mp4';
 import './styles.css';
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -28,7 +30,7 @@ function Navigation() {
 
 function Hero() {
   return <section className="hero" id="home">
-    <div className="hero-image-wrap"><img className="hero-image" src="/hero-robot.jpg" alt="机器人相机与感知设备" /></div>
+    <div className="hero-image-wrap"><img className="hero-image" src={asset('hero-robot.jpg')} alt="机器人相机与感知设备" /></div>
     <div className="hero-overlay"/><div className="hero-grid"/>
     <div className="hero-content">
       <p className="kicker"><i/> ROBOTICS ALGORITHM ENGINEER <span/></p>
@@ -104,22 +106,22 @@ const honorHighlights = [
 const honorCertificates = [
   {
     title: '2020 RoboMaster 机甲大师赛 · 全国一等奖',
-    image: '/certificate-01.jpeg',
+    image: asset('certificate-01.jpeg'),
     alt: 'ROBOMASTER2020 机甲大师对抗赛全国一等奖证书'
   },
   {
     title: '2020 中国工程机器人大赛 · 全国一等奖',
-    image: '/certificate-02.jpeg',
+    image: asset('certificate-02.jpeg'),
     alt: '2020 中国工程机器人大赛暨国际公开赛全国一等奖证书'
   },
   {
     title: '2021 恩智浦智能车大赛 · 全国二等奖',
-    image: '/certificate-03.jpg',
+    image: asset('certificate-03.jpg'),
     alt: '第十六届全国大学生智能汽车竞赛二等奖证书'
   },
   {
     title: '2020四川省大学生电子设计竞赛 · 四川省三等奖',
-    image: '/certificate-04.jpg',
+    image: asset('certificate-04.jpg'),
     alt: '2020年四川省大学生电子设计竞赛本科组三等奖证书'
   }
 ];
@@ -148,8 +150,8 @@ function BorderGlow({ children }) {
 }
 
 const projectVideos = [
-  { label: 'issac gym可视化', src: '/isaac-gym-visualization.mp4' },
-  { label: 'mujoco 仿真测试', src: '/mujoco-visualization.mp4' },
+  { label: 'issac gym可视化', src: asset('isaac-gym-visualization.mp4') },
+  { label: 'mujoco 仿真测试', src: asset('mujoco-visualization.mp4') },
   { label: 'go2实机连续上楼梯效果', src: go2StairsUpVideo },
   { label: 'go2实机连续下楼梯效果', src: go2StairsDownVideo }
 ];
@@ -170,12 +172,12 @@ function VideoGroup({ label, videos }) {
 }
 
 const energySlides = [
-  { src: '/project-02-00.png', alt: '风机与混合储能系统结构图', label: '混合储能系统' },
-  { src: '/project-02-02.png', alt: 'Transformer-BiLSTM-CNN 光伏功率预测网络结构', label: '功率预测神经网络架构' },
-  { src: '/project-02-01.png', alt: '光伏储能滚动时域 MPC 控制框架', label: 'MPC算法框架' },
-  { src: '/project-02-05.png', alt: '安谷水电站多能互补平台系统图', label: '乐山安谷光伏电站建设图' },
-  { src: '/project-02-03.png', alt: '光伏功率与储能功率仿真结果', label: '算法平抑效果I（乐山安谷光伏电站功率24h阴天数据）' },
-  { src: '/project-02-04.png', alt: '储能控制策略仿真结果', label: '算法平抑效果II（乐山安谷光伏电站功率24h雨天数据）' }
+  { src: asset('project-02-00.png'), alt: '风机与混合储能系统结构图', label: '混合储能系统' },
+  { src: asset('project-02-02.png'), alt: 'Transformer-BiLSTM-CNN 光伏功率预测网络结构', label: '功率预测神经网络架构' },
+  { src: asset('project-02-01.png'), alt: '光伏储能滚动时域 MPC 控制框架', label: 'MPC算法框架' },
+  { src: asset('project-02-05.png'), alt: '安谷水电站多能互补平台系统图', label: '乐山安谷光伏电站建设图' },
+  { src: asset('project-02-03.png'), alt: '光伏功率与储能功率仿真结果', label: '算法平抑效果I（乐山安谷光伏电站功率24h阴天数据）' },
+  { src: asset('project-02-04.png'), alt: '储能控制策略仿真结果', label: '算法平抑效果II（乐山安谷光伏电站功率24h雨天数据）' }
 ];
 
 function ImageCarousel() {
