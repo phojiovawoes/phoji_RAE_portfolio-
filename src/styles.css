@@ -131,6 +131,9 @@
 .video-group-heading i{display:block;width:105px;height:1px;background:var(--line)}
 .video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
 .video-slot{position:relative;display:grid;place-items:center;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(222,236,222,.14);border-radius:8px;background:#030504;color:#77857a}
+.video-slot video{display:block;width:100%;height:100%;object-fit:contain;background:#030504}
+.video-slot.has-video{display:block}
+.video-slot.has-video .video-slot-label{z-index:2;padding:5px 8px;background:rgba(3,5,4,.72);border-radius:3px;color:#c8d4c6}
 .video-slot-label{position:absolute;top:16px;left:18px;color:#89978a;font:9px var(--mono);letter-spacing:.05em}
 .video-slot-play{display:grid;place-items:center;width:47px;height:47px;border:1px solid rgba(200,255,128,.7);border-radius:50%;color:var(--lime);opacity:.9}
 .video-slot-note{position:absolute;right:18px;bottom:15px;color:#647268;font-size:11px}

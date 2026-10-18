@@ -1,6 +1,8 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ArrowDown, ArrowUpRight, Mail, MoveUpRight, Phone, Play } from 'lucide-react';
+import go2StairsUpVideo from './a1fdf127d9e482cee07788db485aabe3.mp4';
+import go2StairsDownVideo from './bd69e6693086cb8d2b516649c306e0f4.mp4';
 import './styles.css';
 
 function Navigation() {
@@ -146,24 +148,24 @@ function BorderGlow({ children }) {
 }
 
 const projectVideos = [
-  '视频 01 / 实机巡检',
-  '视频 02 / 运动控制',
-  '视频 03 / 仿真迁移',
-  '视频 04 / 自主探索'
+  { label: 'issac gym可视化', src: '/isaac-gym-visualization.mp4' },
+  { label: 'mujoco 仿真测试', src: '/mujoco-visualization.mp4' },
+  { label: 'go2实机连续上楼梯效果', src: go2StairsUpVideo },
+  { label: 'go2实机连续下楼梯效果', src: go2StairsDownVideo }
 ];
 
-function VideoSlot({ label }) {
-  return <div className="video-slot" data-reveal-sequence aria-label={`${label}，视频待补充`}>
+function VideoSlot({ video }) {
+  const { label, src } = video;
+  return <div className={`video-slot${src ? ' has-video' : ''}`} data-reveal-sequence aria-label={`${label}${src ? '' : '，视频待补充'}`}>
     <span className="video-slot-label">{label}</span>
-    <span className="video-slot-play" aria-hidden="true"><Play size={20} fill="currentColor"/></span>
-    <span className="video-slot-note">视频待补充</span>
+    {src ? <video src={src} controls preload="metadata" playsInline/> : <><span className="video-slot-play" aria-hidden="true"><Play size={20} fill="currentColor"/></span><span className="video-slot-note">视频待补充</span></>}
   </div>;
 }
 
 function VideoGroup({ label, videos }) {
   return <section className="video-group">
     <div className="video-group-heading" data-reveal-sequence><span>{label}</span><i/></div>
-    <div className="video-grid" data-reveal-sequence>{videos.map((video) => <VideoSlot key={video} label={video}/>)}</div>
+    <div className="video-grid" data-reveal-sequence>{videos.map((video) => <VideoSlot key={video.label} video={video}/>)}</div>
   </section>;
 }
 
