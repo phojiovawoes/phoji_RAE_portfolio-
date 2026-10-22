@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { ArrowDown, ArrowUpRight, Mail, MoveUpRight, Phone, Play } from 'lucide-react';
 import go2StairsUpVideo from './a1fdf127d9e482cee07788db485aabe3.mp4';
 import go2StairsDownVideo from './bd69e6693086cb8d2b516649c306e0f4.mp4';
+import go2Obstacle50Video from './adcbaf1e81d2b3f8f301109d14412ef2_raw.mp4';
+import go2Obstacle60Video from './ecfe901d60b39096dfa31e2e35142b80.mp4';
 import './styles.css';
 
 const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
@@ -153,7 +155,9 @@ const projectVideos = [
   { label: 'issac gym可视化', src: asset('isaac-gym-visualization.mp4') },
   { label: 'mujoco 仿真测试', src: asset('mujoco-visualization.mp4') },
   { label: 'go2实机连续上楼梯效果', src: go2StairsUpVideo },
-  { label: 'go2实机连续下楼梯效果', src: go2StairsDownVideo }
+  { label: 'go2实机连续下楼梯效果', src: go2StairsDownVideo },
+  { label: 'go2实机跨越50cm障碍物', src: go2Obstacle50Video },
+  { label: 'go2实机跨越60cm障碍物', src: go2Obstacle60Video }
 ];
 
 function VideoSlot({ video }) {
